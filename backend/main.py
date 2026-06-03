@@ -1,3 +1,4 @@
+from fastapi.middleware.cors import CORSMiddleware
 from schemas import StudentCreate, DatabaseConnectionCreate, QueryRequest, SQLRequest, ExecuteSQLRequest, AskDatabaseRequest
 from models import (
     Student,
@@ -18,7 +19,13 @@ from services.ai_service import (
 )
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.post("/students")
 def create_student(
     student: StudentCreate,

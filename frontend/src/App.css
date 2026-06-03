@@ -1,0 +1,21 @@
+.container {
+  max-width: 1000px;
+}
+
+input {
+  width: 400px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
